@@ -4,16 +4,15 @@ package curso.generation.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import curso.generation.demo.entidades.User;
+// import curso.generation.demo.entidades.User;
 import curso.generation.demo.repositorios.UsersCRUDRepository;
 
 @RestController
 public class DemoRestController {
-
-	// --------- Recibir un JSON desde el PostMan ------------------
 
 	// ----- Mostrar los datos en un jsp (vista web) ----
 	@Autowired
@@ -21,9 +20,9 @@ public class DemoRestController {
 
 	@PostMapping("entrada")
 	// public Iterable<User> getUsers(@RequestBody DatosLogin datos){
-	public String getUsers(@RequestParam String user, @RequestParam String password, Model model, User usuario) {
-		usuario = new User();
-		// DatosLogin usario = new DatosLogin();
+	public String getUsers(@RequestParam String user, @RequestParam String password, Model model, DatosLogin usuario) {
+		// usuario = new User();
+		usuario = new DatosLogin();
 		String jspDestino = null;
 
 		usuario.setUser(user);
@@ -31,15 +30,13 @@ public class DemoRestController {
 
 		if (usuario.getUser().equalsIgnoreCase("admin") && usuario.getPassword().equals("1234")) {
 			jspDestino = "admi";
-			
-			//System.out.println("admi,jsp " + jspDestino);
-			
+
 		} else if (usuario.getUser().equalsIgnoreCase("pepe") && usuario.getPassword().equals("1234")) {
 			jspDestino = "entrada";
-			//System.out.println("entrada " + jspDestino);
+
 		} else {
 			jspDestino = "error";
-			//System.out.println(" error " + jspDestino);
+
 		}
 
 		model.addAttribute("usuario", usuario);
