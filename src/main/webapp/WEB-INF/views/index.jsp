@@ -16,6 +16,8 @@
 	<form action="entrada" method="post">
 		Usuario: <input type="text" name="user"> 
 		Clave: <input type="password" name="password">
+		<br>
+		<input type="button" value="Entrar">
 	</form>
 
 </body>
