@@ -13,11 +13,22 @@
 
 	<h3>Login de Usuarios</h3>
 
+
+	<!--<spring:form action="entrada" modelAttribute="User" method="POST">
+	         usuario:<spring:input path="user" />
+		<br>
+          	clave:<spring:password path="password" />
+		<br>
+		<input type="submit" value="aceptar">
+
+	</spring:form>-->
+
+
 	<form action="entrada" method="post">
 		Usuario: <input type="text" name="user"> 
-		Clave: <input type="password" name="password">
-		<br>
-		<input type="button" value="Entrar">
+		Clave: <input type="password" name="password"> 
+		<br> 
+		<input type="submit" value="Entrar">
 	</form>
 
 </body>

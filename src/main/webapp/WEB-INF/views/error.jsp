@@ -4,16 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error</title>
 </head>
 <body>
-
-	<h1>Pagina de Entrada</h1>
-	<div>
-		<h3>Usuario: ${usuario.user }</h3>
-		<h3>Clave: ${usuario.password }</h3>
-	</div>
-
-
+	<h1>Error</h1>
+	<h3>Clave o contraseña incorrectos</h3>
 </body>
 </html>

@@ -15,23 +15,40 @@ public class DemoRestController {
 
 	// --------- Recibir un JSON desde el PostMan ------------------
 
+	// ----- Mostrar los datos en un jsp (vista web) ----
 	@Autowired
 	private UsersCRUDRepository repository;
 
 	@PostMapping("entrada")
 	// public Iterable<User> getUsers(@RequestBody DatosLogin datos){
-	public String getUsers(@RequestParam String user, @RequestParam String password, Model model) {
-		User usario = new User();
-		usario.setUser(user);
-		usario.setPassword(password);
-		
-		model.addAttribute(usario);
+	public String getUsers(@RequestParam String user, @RequestParam String password, Model model, User usuario) {
+		usuario = new User();
+		// DatosLogin usario = new DatosLogin();
+		String jspDestino = null;
+
+		usuario.setUser(user);
+		usuario.setPassword(password);
+
+		if (usuario.getUser().equalsIgnoreCase("admin") && usuario.getPassword().equals("1234")) {
+			jspDestino = "admi";
+			
+			//System.out.println("admi,jsp " + jspDestino);
+			
+		} else if (usuario.getUser().equalsIgnoreCase("pepe") && usuario.getPassword().equals("1234")) {
+			jspDestino = "entrada";
+			//System.out.println("entrada " + jspDestino);
+		} else {
+			jspDestino = "error";
+			//System.out.println(" error " + jspDestino);
+		}
+
+		model.addAttribute("usuario", usuario);
 
 		// return getRepository().getUser(datos.getUser(), datos.getPassword(),
 		// datos.getRoles_id());
 		// el rol?¿
 
-		return "entrada";
+		return jspDestino;
 	}
 
 	public UsersCRUDRepository getRepository() {
