@@ -10,8 +10,8 @@
 
 	<h1>Pagina de Entrada</h1>
 	<div>
-		<h3>Usuario: ${usuario.user }</h3>
-		<h3>Clave: ${usuario.password }</h3>
+		<h4>Usuario:&nbsp; ${usuario.user }</h4>
+		<h4>Clave:&nbsp; ${usuario.password }</h4>
 	</div>
 
 
