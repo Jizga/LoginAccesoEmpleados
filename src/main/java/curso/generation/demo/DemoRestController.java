@@ -17,7 +17,7 @@ public class DemoRestController {
 	@Autowired
 	private UsersCRUDRepository repositoryUser;
 
-	@PostMapping(value = "api/verLogin") // uri del formulario de login
+	@PostMapping(value = "api/verLogin") // Path del formulario de acceso
 	public String verLogin(@RequestParam String user, @RequestParam String password) {
 
 		if (getRepositoryUser().getLogin(user, password) != null)

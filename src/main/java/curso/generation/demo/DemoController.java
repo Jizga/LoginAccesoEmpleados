@@ -17,7 +17,7 @@ public class DemoController {
 	}
 
 		
-	@PostMapping("entrada")
+	@PostMapping("verLogin")
 	public String getUsers(@RequestParam String user, @RequestParam String password, Model model, DatosLogin usuario) {
 		
 		usuario = new DatosLogin();
