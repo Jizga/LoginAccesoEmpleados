@@ -15,24 +15,25 @@ public class DemoRestController {
 // ---------------------------  Recibe JSON	---------------------------------------- 
 
 	@Autowired
-	private UsersCRUDRepository repository;
+	private UsersCRUDRepository repositoryUser;
 
-	@PostMapping(value = "api/accesosUsuarios") // Que uri?¿¿¿¿¿¿????
-	public Iterable<User> getUser(@RequestParam String user, @RequestParam String password,
-			@RequestParam int roles_id) {
-		
-		//El rol tambien???? (es un clave foranea)
+	@PostMapping(value = "api/verLogin") // uri del formulario de login
+	public String verLogin(@RequestParam String user, @RequestParam String password) {
 
-		return getRepository().getUser(user, password, roles_id);
-	}
-	
+		if (getRepositoryUser().getLogin(user, password) != null)
 
-	public UsersCRUDRepository getRepository() {
-		return repository;
+			return getRepositoryUser().getLogin(user, password).getRole().getRol();
+
+		else
+			return "No tienes un rol válido";
 	}
 
-	public void setRepository(UsersCRUDRepository repository) {
-		this.repository = repository;
+	public UsersCRUDRepository getRepositoryUser() {
+		return repositoryUser;
+	}
+
+	public void setRepositoryUser(UsersCRUDRepository repositoryUser) {
+		this.repositoryUser = repositoryUser;
 	}
 
 }

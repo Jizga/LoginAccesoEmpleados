@@ -15,26 +15,21 @@ div {
 </head>
 <body>
 
-	<!--<spring:form action="entrada" modelAttribute="User" method="POST">
-	         usuario:<spring:input path="user" />
-		<br>
-          	clave:<spring:password path="password" />
-		<br>
-		<input type="submit" value="aceptar">
-
-	</spring:form>-->
-
 	<div>
 		<h1>Estoy en los servicios rest del curso</h1>
 		<h3>Login de Usuarios</h3>
-		<form action="entrada" method="post">
-			Usuario:&nbsp; <input type="text" name="user"> <br> <br>
-			Clave:&nbsp; <input type="password" name="password"> <br>
-			<br> <input type="submit" value="Entrar">
+		
+		<form action="verLogin" method="post">
+			Usuario:&nbsp; <input type="text" name="user"> 
+			<br> 
+			<br>
+			Clave:&nbsp; <input type="password" name="password"> 
+			<br>
+			<br> 
+			<input type="submit" value="Entrar">
 		</form>
 
-		<br> <br> <a href="api">pulsa aqui para ver los
-			servicios</a>
+		<br> <br> <a href="api">pulsa aqui para ver los servicios</a>
 	</div>
 </body>
 </html>
