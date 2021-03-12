@@ -19,7 +19,7 @@ div {
 		<h1>Estoy en los servicios rest del curso</h1>
 		<h3>Login de Usuarios</h3>
 		
-		<form action="verLogin" method="post">
+		<form action="api/verLogin" method="post">
 			Usuario:&nbsp; <input type="text" name="user"> 
 			<br> 
 			<br>

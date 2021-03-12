@@ -12,7 +12,7 @@ import curso.generation.demo.repositorios.UsersCRUDRepository;
 @RestController
 public class DemoRestController {
 
-// ---------------------------  Recibe JSON	---------------------------------------- 
+// ---------------------------  Para invocaciones de servicios REST y Recibe JSON	---------------------------------------- 
 
 	@Autowired
 	private UsersCRUDRepository repositoryUser;
