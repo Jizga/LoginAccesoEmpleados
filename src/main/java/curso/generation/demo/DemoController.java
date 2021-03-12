@@ -17,7 +17,7 @@ public class DemoController {
 	}
 
 		
-	@PostMapping("api/verLogin") // Path del formulario de acceso
+	@PostMapping("verLogin") // Path del formulario de acceso en caso de que hagamos la app mediante JSP
 	public String getUsers(@RequestParam String user, @RequestParam String password, Model model, DatosLogin usuario) {
 		
 		usuario = new DatosLogin();

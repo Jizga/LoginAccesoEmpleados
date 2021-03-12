@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import curso.generation.demo.entidades.User;
 import curso.generation.demo.repositorios.UsersCRUDRepository;
 
 @RestController
@@ -17,7 +16,7 @@ public class DemoRestController {
 	@Autowired
 	private UsersCRUDRepository repositoryUser;
 
-	@PostMapping(value = "api/verLogin") // Path del formulario de acceso
+	@PostMapping(value = "api/verLogin") // Path del formulario de acceso en caso de hacerlo mediante servicios REST
 	public String verLogin(@RequestParam String user, @RequestParam String password) {
 
 		if (getRepositoryUser().getLogin(user, password) != null)
