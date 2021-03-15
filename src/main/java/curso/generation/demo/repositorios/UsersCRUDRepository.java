@@ -13,16 +13,5 @@ public interface UsersCRUDRepository extends CrudRepository<User, Integer> {
 	//Solo puede dar un ÚNICO objeto con la misma clave y la misma contraseña
 	public User getLogin(String user, String password);
 
-	@Override
-	default Optional<User> findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	default Iterable<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
